@@ -41,10 +41,24 @@ Besides, there is no template for QALD 8 and 9 training set,
 which make comparisons difficult. 
 On the other hand, 
 learner consists only of a one-layer encoder and a one-layer decoder.
-The performance will be greatly improved using other neural network model. 
+The performance will be greatly improved using other neural network model.
+To improve NSpM, we used DBpedia Spotlight and Pegasus model. 
 
 % DBpedia spotlight
-DBpedia Spotlight \cite{isem2013daiber}
+DBpedia Spotlight \cite{isem2013daiber} is a tool for automatic annotating and entity linking, 
+which performs entity extraction including entity detection and name resolution. 
+First, we integrated DBpedia Spotlight into the interpreter to detect entities. 
+We abandoned generator and trained with templates directly. 
+Then in the prediction phase, 
+when interpreter receives a question, 
+it detects entities in the question using DBpedia Spotlight and replaces them with placeholders.
+Interpreter translates this modified question into a SPARQL query with placeholders
+and restores entities again. 
+Integration of DBpedia Spotlight in interpreter decreases the size of training set
+and therefore the training effort is reduced. 
+However, the performance is better,
+since it uses the entire knowledge graph while prediction
+and learner only needs to focus on learning predicates in SPARQL query. 
 
 % Pegasus
 
