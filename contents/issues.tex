@@ -13,7 +13,7 @@ I asked my teammates then figured out how to deploy our software on it.
 
 % gerbil
 In our evaluation at beginning, 
-we must create our data set in qald format with answer
+we must create our data set in QALD format with answer
 and upload it to gerbil,
 since the system was not deployed on VM at that time. 
 We created a script to do it automatically. 
@@ -21,9 +21,9 @@ We created a script to do it automatically.
 % dataset
 Inspired by templates and generator in the original NSpM model,
 we used templates, questions and queries with placeholders, for training directly.
-For training on qald 8 and 9, 
+For training on QALD 8 and 9, 
 we did not have a data set suitable for our approach. 
-Thus, we implemented a script to replace entities in qald 8 and 9 with placeholders
+Thus, we implemented a script to replace entities in QALD 8 and 9 with placeholders
 and convert to the format we need. 
 In order to include more predicates in our data set, 
 we also checked classes in DBpedia 
@@ -49,7 +49,7 @@ and we switch to Pegasus model.
 
 % pretrain
 At the end of project group, 
-we wanted to pre-train on LC-QALD and fine-tune on qald 8 and 9,
+we wanted to pre-train on LC-QALD and fine-tune on QALD 8 and 9,
 which could not be done directly. 
 After checking parameters in Pegasus model, 
 we found a way to do it. 
