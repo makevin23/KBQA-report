@@ -66,6 +66,12 @@ We used hugging face pegasus model, which is pre-trained on a large text corpora
 Pegasus model enlarges our set of tokens and improved the quality of translation. 
 Moreover, we pre-trained again on LC-QALD dataset and fine-tuned on QALD 8 and 9. 
 
+% ConvS2S
+We also tried Convolutional Sequence-to-Sequence model (ConvS2S) \cite{DBLP:journals/corr/GehringAGYD17} to improve the translation quality.
+ConvS2S converts an input sequence to a output sequence using convolution neural networks. 
+This approach did not work in the end
+as we could not rewrite it in tensorflow 2. 
+
 % Gerbil
 For evaluation we used gerbil\cite{gerbil}.
 Gerbil is a web-based platform for comparison of QA system. 
@@ -73,5 +79,3 @@ User can upload test set and add a QA system via URI or upload a JSON file with 
 We focused on QALD 8 and 9 for evaluation. 
 At the beginning, we generated a JSON file with answers and uploaded it to gerbil. 
 Later once we deployed our QA system on VM, we added our system via URI every time. 
-
-% ConvS2S
