@@ -41,7 +41,7 @@ Besides, there is no template for QALD 8 and 9 training set,
 which make comparisons difficult. 
 On the other hand, 
 learner consists only of a one-layer encoder and a one-layer decoder.
-The performance will be greatly improved using other neural network model.
+The performance will be greatly improved using other translation model.
 To improve NSpM, we used DBpedia Spotlight and Pegasus model. 
 
 % DBpedia spotlight
@@ -60,10 +60,15 @@ However, the performance is better,
 since it uses the entire knowledge graph while prediction
 and learner only needs to focus on learning predicates in SPARQL query. 
 
-% Pegasus
+% Pegasus: pre-training with extracted gap-sentences for abstractive summarization
+Pegasus\cite{10.5555/3524938.3525989} is a pre-trained model with extracted gap-sentences for abstractive summarization. 
+We used hugging face pegasus model, which is pre-trained on a large text corpora. 
+Pegasus model enlarges our set of tokens and improved the quality of translation. 
+Moreover, we pre-trained again on LC-QALD dataset and fine-tuned on QALD 8 and 9. 
 
 % Gerbil
-Gerbil \cite{gerbil} is a web-based platform for comparison of QA system. 
+For evaluation we used gerbil\cite{gerbil}.
+Gerbil is a web-based platform for comparison of QA system. 
 User can upload test set and add a QA system via URI or upload a JSON file with answers in QALD-JSON format. 
 We focused on QALD 8 and 9 for evaluation. 
 At the beginning, we generated a JSON file with answers and uploaded it to gerbil. 
