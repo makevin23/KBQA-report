@@ -3,6 +3,45 @@
 \section{Approach Description}
 
 % NSpM
+Our basis approach is the Neural SPARQL Machine (NSpM)\cite{soru-marx-nampi2018},
+which considers SPARQL query as another natural language and employ machine translation techniques. 
+NSpM consists of three main components: 
+Generator, Learner and Interpreter. 
+Generator generates a training set
+by fulling entities from knowledge graph into question and query templates with placeholders. 
+
+Following is an example of template and generated questions and queries:
+
+\begin{verbatim}
+    Where is <A> located in?; 
+                    SELECT ?x { <A> dbo:location ?x }
+\end{verbatim}
+
+\begin{verbatim}
+    Where is London located in?; 
+                    SELECT ?x { dbr:London dbo:location ?x }
+    Where is the Colosseum located in?; 
+                    SELECT ?x { :Colosseum :location ?x }
+    Where is Mount Everest located in?; 
+                    SELECT ?x { :Mount_Everest :location ?x }
+\end{verbatim}
+
+Learner is a deep neural network based translator, 
+which translates a sequence of tokens in natural language
+into a sequence which encodes a SPARQL query after training.
+Interpreter uses the learned model to predict a SPARQL query for received question.
+
+There are two drawbacks in this original NSpM.
+Since training data is generated using templates, 
+the number of entities are severely restricted,
+which leads to a bad performance in evaluation.
+Or the training set has to be very large
+that makes it hard to train with. 
+Besides, there is no template for qald 8 and 9 training set,
+which make comparisons difficult. 
+On the other hand, 
+learner consists only of a one-layer encoder and a one-layer decoder.
+The performance will be greatly improved using other neural network model. 
 
 % Gerbil
 
