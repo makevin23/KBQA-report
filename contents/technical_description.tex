@@ -37,16 +37,22 @@ the number of entities are severely restricted,
 which leads to a bad performance in evaluation.
 Or the training set has to be very large
 that makes it hard to train with. 
-Besides, there is no template for qald 8 and 9 training set,
+Besides, there is no template for QALD 8 and 9 training set,
 which make comparisons difficult. 
 On the other hand, 
 learner consists only of a one-layer encoder and a one-layer decoder.
 The performance will be greatly improved using other neural network model. 
 
-% Gerbil
-
 % DBpedia spotlight
+DBpedia Spotlight \cite{isem2013daiber}
 
 % Pegasus
+
+% Gerbil
+Gerbil \cite{gerbil} is a web-based platform for comparison of QA system. 
+User can upload test set and add a QA system via URI or upload a JSON file with answers in QALD-JSON format. 
+We focused on QALD 8 and 9 for evaluation. 
+At the beginning, we generated a JSON file with answers and uploaded it to gerbil. 
+Later once we deployed our QA system on VM, we added our system via URI every time. 
 
 % ConvS2S
