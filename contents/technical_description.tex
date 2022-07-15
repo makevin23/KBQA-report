@@ -59,12 +59,16 @@ and therefore the training effort is reduced.
 However, the performance is better,
 since it uses the entire knowledge graph while prediction
 and learner only needs to focus on learning predicates in SPARQL query. 
+DBpedia Spotlight is also used for generate templates from QALD 8 and 9 training set,
+finding entities in quesiton and query and replacing them with placeholders. 
 
 % Pegasus: pre-training with extracted gap-sentences for abstractive summarization
 Pegasus\cite{10.5555/3524938.3525989} is a pre-trained model with extracted gap-sentences for abstractive summarization. 
 We used hugging face pegasus model, which is pre-trained on a large text corpora. 
 Pegasus model enlarges our set of tokens and improved the quality of translation. 
 Moreover, we pre-trained again on LC-QALD dataset and fine-tuned on QALD 8 and 9. 
+
+% TODO: summarize our approach
 
 % ConvS2S
 We also tried Convolutional Sequence-to-Sequence model (ConvS2S) \cite{DBLP:journals/corr/GehringAGYD17} to improve the translation quality.
