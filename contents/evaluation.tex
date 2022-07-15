@@ -3,16 +3,16 @@
 \section{Evaluation}
 
 We used gerbil for evaluation.
-Gerbil can evaluate QA systems on a QALD data set automatically,
+Gerbil can evaluate QA systems on a QALD dataset automatically,
 computing micro precision, recall and F1 score, 
 macro precision, recall and F1 score,
 and F1 QALD score. 
 Additionally, the average answering time is also calculated. 
 
-We focused on QALD 8 and QALD 9 data sets, trained and evaluated on them. 
+We focused on QALD 8 and QALD 9 datasets, trained and evaluated on them. 
 The questions in QALD 9 are more complicated than in QALD 8, 
 e.g. multiple triples and more logic. 
-Also, QALD 9 data set contains more questions.
+Also, QALD 9 dataset contains more questions.
 Therefore, QALD 9 is more challenging than QALD 8 for evaluation. 
 
 Following table shows our evaluation results from approach A during the Project Group:
@@ -47,12 +47,12 @@ All scores are macro scores.
 
 At the beginning of the Project group,
 in order to try out the original NSpM model and gerbil evaluation,
-we trained with QALD 8 train data set for 8 epochs. 
+we trained with QALD 8 train dataset for 8 epochs. 
 We also implemented a python script to simulate 
 receiving natural language question, 
 converting it to query,
 sending request to DBpedia endpoint, 
-and finally generating a data set with answers in QALD format,
+and finally generating a dataset with answers in QALD format,
 since we did not have an URL endpoint for evaluation until that time. 
 
 After figuring out the functions of each component, 
@@ -61,9 +61,9 @@ This time, the evaluation result was not zero anymore,
 which proved that,
 the NSpM is a fesible approach. 
 
-By inspecting the sparql queries in train and test data set, 
+By inspecting the sparql queries in train and test dataset, 
 we noticed that
-many entities appear in test data set are not in train data set. 
+many entities appear in test dataset are not in train dataset. 
 Therefore, we integrated DBpedia spotlight to avoid this problem. 
 With DBpedia spotlight and more training data, 
 the result has been greatly improved. 
@@ -71,7 +71,7 @@ the result has been greatly improved.
 For a better conversion from natural language question to sparql query, 
 we used hugging face Pegasus model instead of the simple encoder and decoder neural network in the original NSpM.
 
-At the end of the project group, we tried pre-training on LC-QALD data set, then fine-tuning on QALD 8 or QALD 9. 
+At the end of the project group, we tried pre-training on LC-QALD dataset, then fine-tuning on QALD 8 or QALD 9. 
 Interestingly, the score for QALD 8 increases with pre-training, 
 but for QALD 9 decreases. 
 However, we did not enough time to figure out the reason behind it. 
