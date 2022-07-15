@@ -30,8 +30,6 @@ Following table shows our evaluation results from approach A during the Project 
     \hline
 \end{tabular}
 
-\break
-
 \begin{tabular}{ccccccc} \hline
     \multicolumn{5}{c}{QALD-9} \\ \hline
     \textbf{Date} & \textbf{Model}  & \textbf{Precision} & \textbf{Recall} & \textbf{F1} & \textbf{F1 QALD} \\ \hline
@@ -61,14 +59,14 @@ This time, the evaluation result was not zero anymore,
 which proved that,
 the NSpM is a fesible approach. 
 
-By inspecting the sparql queries in train and test dataset, 
+By inspecting the SPARQL queries in train and test dataset, 
 we noticed that
 many entities appear in test dataset are not in train dataset. 
 Therefore, we integrated DBpedia spotlight to avoid this problem. 
 With DBpedia spotlight and more training data, 
 the result has been greatly improved. 
 
-For a better conversion from natural language question to sparql query, 
+For a better conversion from natural language question to SPARQL query, 
 we used hugging face Pegasus model instead of the simple encoder and decoder neural network in the original NSpM.
 
 At the end of the project group, we tried pre-training on LC-QALD dataset, then fine-tuning on QALD 8 or QALD 9. 
