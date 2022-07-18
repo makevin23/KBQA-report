@@ -5,7 +5,7 @@
 During this project group,
 I have met many issues, 
 but with the help of our teammates, 
-they were solved quickly.
+the most of them were solved quickly.
 
 % VM
 At first, I did not know what to do with our virtual machine. 
@@ -19,15 +19,16 @@ since the system was not deployed on VM at that time.
 We created a script to do it automatically. 
 
 % dataset
-Inspired by templates and generator in the original NSpM model,
-we used templates, questions and queries with placeholders, for training directly.
-For training on QALD 8 and 9, 
-we did not have a dataset suitable for our approach. 
+Inspired by templates and generator from NSpM,
+we used templates, questions and queries with placeholders, 
+instead of generated questions and queries.
+QALD 8 and 9 datasets does not fit our approach in training. 
 Thus, we implemented a script to replace entities in QALD 8 and 9 with placeholders
 and convert to the format we need. 
 In order to include more predicates in our dataset, 
 we also checked classes in DBpedia 
-and wrote questions and queries on our own. 
+and wrote questions and queries on our own,
+even though they were unused for evaluation in the end. 
 
 % GPU cuda
 While training our model on felis Server, 
@@ -36,20 +37,20 @@ This was fixed quickly after some research.
 
 % ConvS2S
 At the beginning of the second semester,
-we found Convolutional Sequence-to-Sequence model (ConvS2S),
-which is written in tensorflow version 1. 
+we found ConvS2S model,
+which is implemented in tensorflow version 1. 
 There is a big difference between Tensorflow version 1 and 2,
-we have spent a lot of time to rewrite it in tensorflow two
+we have spent a lot of time to reimplement it in tensorflow 2
 and add additional features that we want.
-However, after the implementation we trained ConvS2S with our questions and queries,
+However, after the implementation we trained ConvS2S with questions and queries,
 it could not predict any query. 
-We tried a lot to fix this model, 
+We tried many ways to fix this model, 
 but it did not work in the end
-and we switch to Pegasus model. 
+and we switched to Pegasus model. 
 
 % pretrain
 At the end of project group, 
 we wanted to pre-train on LC-QALD and fine-tune on QALD 8 and 9,
 which could not be done directly. 
 After checking parameters in Pegasus model, 
-we found a way to do it. 
+we knew how to do it. 
